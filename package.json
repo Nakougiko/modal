@@ -1,0 +1,30 @@
+{
+  "name": "@lukasgoulois/modal",
+  "version": "1.0.0",
+  "description": "A simple way to make modal",
+  "license": "MIT",
+  "author": "Lukas Goulois",
+  "type": "module",
+  "main": "modal.js",
+  "files": [
+    "modal.js",
+    "modal.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nakougiko/modal"
+  },
+  "homepage": "https://github.com/Nakougiko/modal#readme",
+  "bugs": {
+    "url": "https://github.com/Nakougiko/modal/issues"
+  },
+  "keywords": [
+    "modal",
+    "vanilla-js",
+    "popup",
+    "dialog",
+    "component",
+    "javascript",
+    "ui"
+  ]
+}

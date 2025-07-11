@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Test</title>
+    <link rel="stylesheet" href="modal.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .btn-thirdary {
+            background-color: #f0ad4e;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Test Modal</h1>
+
+    <button id="alertBtn">Alert</button>
+    <button id="confirmBtn">Confirm</button>
+    <button id="customBtn">Custom</button>
+
+    <script type="module">
+        import Modal from './modal.js';
+
+        document.getElementById('alertBtn').addEventListener('click', () => {
+            Modal.alert('This is a basic alert modal.');
+        });
+
+        document.getElementById('confirmBtn').addEventListener('click', async () => {
+            const confirmed = await Modal.confirm('Do you confirm this action?');
+            console.log('User confirmed:', confirmed);
+        });
+
+        document.getElementById('customBtn').addEventListener('click', () => {
+            Modal.custom({
+                title: 'Custom Modal',
+                content: '<p>This is a custom modal with multiple buttons.</p>',
+                buttons: [
+                    {
+                        text: 'Cancel',
+                        classes: ['btn-secondary'],
+                        onClick: () => console.log('Cancelled')
+                    },
+                    {
+                        text: 'OK',
+                        classes: ['btn-primary'],
+                        onClick: () => console.log('Confirmed')
+                    },
+                    {
+                        text: 'Other',
+                        classes: ['btn-thirdary'],
+                        closeOnClick: false,
+                        onClick: () => {
+                            console.log('Other clicked');
+                        }
+                    }
+                ],
+                options: {
+                    size: 'small',
+                    showCloseButton: true
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
