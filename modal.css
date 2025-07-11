@@ -1,3 +1,42 @@
+:root {
+  --modal-bg-color: white;
+  --modal-border-radius: 8px;
+  --modal-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  --modal-padding: 1.5rem;
+
+  --modal-small-width: 300px;
+  --modal-medium-width: 500px;
+  --modal-large-width: 800px;
+
+  --modal-close-btn-top: 10px;
+  --modal-close-btn-right: 10px;
+  --modal-close-btn-font-size: 1.5rem;
+  --modal-close-btn-color: #888;
+  --modal-close-btn-hover-color: #333;
+
+  --modal-header-font-size: 1.25rem;
+  --modal-body-font-size: 1rem;
+  --modal-body-color: #444;
+
+  --modal-footer-margin-top: 1.5rem;
+  --modal-btn-padding: 0.6rem 1.2rem;
+  --modal-btn-font-size: 1rem;
+  --modal-btn-border-radius: 4px;
+  --modal-btn-margin-left: 0.5rem;
+
+  --btn-primary-bg: #3498db;
+  --btn-primary-color: white;
+  --btn-primary-hover-bg: #2980b9;
+
+  --btn-secondary-bg: #95a5a6;
+  --btn-secondary-color: white;
+  --btn-secondary-hover-bg: #7f8c8d;
+
+  --btn-danger-bg: #e74c3c;
+  --btn-danger-color: white;
+  --btn-danger-hover-bg: #c0392b;
+}
+
 /* === Overlay === */
 .modal-overlay {
   position: fixed;
@@ -13,10 +52,10 @@
 /* === Modal Container === */
 .modal-container {
   position: relative;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-  padding: 1.5rem;
+  background: var(--modal-bg-color);
+  border-radius: var(--modal-border-radius);
+  box-shadow: var(--modal-box-shadow);
+  padding: var(--modal-padding);
   max-width: 90%;
   width: 100%;
   animation: scaleIn 0.2s ease;
@@ -24,88 +63,88 @@
 
 /* === Modal Sizes === */
 .modal-small {
-  max-width: 300px;
+  max-width: var(--modal-small-width);
 }
 
 .modal-medium {
-  max-width: 500px;
+  max-width: var(--modal-medium-width);
 }
 
 .modal-large {
-  max-width: 800px;
+  max-width: var(--modal-large-width);
 }
 
 /* === Close Button (X) === */
 .modal-close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: var(--modal-close-btn-top);
+  right: var(--modal-close-btn-right);
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: #888;
+  font-size: var(--modal-close-btn-font-size);
+  color: var(--modal-close-btn-color);
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .modal-close-btn:hover {
-  color: #333;
+  color: var(--modal-close-btn-hover-color);
 }
 
 /* === Header === */
 .modal-header h2 {
   margin: 0 0 1rem;
-  font-size: 1.25rem;
+  font-size: var(--modal-header-font-size);
 }
 
 /* === Body === */
 .modal-body {
-  font-size: 1rem;
-  color: #444;
+  font-size: var(--modal-body-font-size);
+  color: var(--modal-body-color);
 }
 
 /* === Footer / Buttons === */
 .modal-footer {
-  margin-top: 1.5rem;
+  margin-top: var(--modal-footer-margin-top);
   text-align: right;
 }
 
 .modal-footer button {
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
+  padding: var(--modal-btn-padding);
+  font-size: var(--modal-btn-font-size);
   border: none;
-  border-radius: 4px;
-  margin-left: 0.5rem;
+  border-radius: var(--modal-btn-border-radius);
+  margin-left: var(--modal-btn-margin-left);
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 /* === Button Styles === */
 .btn-primary {
-  background-color: #3498db;
-  color: white;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
 }
 
 .btn-primary:hover {
-  background-color: #2980b9;
+  background-color: var(--btn-primary-hover-bg);
 }
 
 .btn-secondary {
-  background-color: #95a5a6;
-  color: white;
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-color);
 }
 
 .btn-secondary:hover {
-  background-color: #7f8c8d;
+  background-color: var(--btn-secondary-hover-bg);
 }
 
 .btn-danger {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--btn-danger-bg);
+  color: var(--btn-danger-color);
 }
 
 .btn-danger:hover {
-  background-color: #c0392b;
+  background-color: var(--btn-danger-hover-bg);
 }
 
 /* === Animations === */

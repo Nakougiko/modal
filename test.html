@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Modal Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Test Cases</title>
     <link rel="stylesheet" href="modal.css">
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,6 +22,21 @@
             font-size: 16px;
         }
 
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
         .btn-thirdary {
             background-color: #f0ad4e;
             color: white;
@@ -30,24 +45,46 @@
 </head>
 
 <body>
-    <h1>Test Modal</h1>
+    <h1>Modal Test Cases</h1>
 
-    <button id="alertBtn">Alert</button>
-    <button id="confirmBtn">Confirm</button>
-    <button id="customBtn">Custom</button>
+    <!-- Buttons to test different types of modals -->
+    <button id="alertBtn">Test Alert Modal</button>
+    <button id="confirmBtn">Test Confirm Modal</button>
+    <button id="customBtn">Test Custom Modal</button>
+    <button id="fromIdBtn">Test Modal from ID</button>
+
+    <!-- Example of a predefined HTML modal for use with fromId -->
+    <div id="predefinedModal" style="display: none;">
+        <h2>Predefined Modal</h2>
+        <p>This modal is created from an existing HTML element.</p>
+    </div>
 
     <script type="module">
         import Modal from './modal.js';
 
+        // Example usage of Modal.alert
         document.getElementById('alertBtn').addEventListener('click', () => {
-            Modal.alert('This is a basic alert modal.');
+            Modal.alert('This is a basic alert modal.', 'Alert Title', {
+                size: 'large',
+                onClose: () => {
+                    console.log('Alert modal closed');
+                }
+            });
         });
 
+        // Example usage of Modal.confirm
         document.getElementById('confirmBtn').addEventListener('click', async () => {
-            const confirmed = await Modal.confirm('Do you confirm this action?');
+            const confirmed = await Modal.confirm('Do you confirm this action?', 'Confirmation Required', {
+                escToClose: true,
+                closeOnOutsideClick: false,
+                onClose: () => {
+                    console.log('Confirm modal closed');
+                }
+            });
             console.log('User confirmed:', confirmed);
         });
 
+        // Example usage of Modal.custom
         document.getElementById('customBtn').addEventListener('click', () => {
             Modal.custom({
                 title: 'Custom Modal',
@@ -74,7 +111,25 @@
                 ],
                 options: {
                     size: 'small',
-                    showCloseButton: true
+                    showCloseButton: true,
+                    escToClose: true,
+                    closeOnOutsideClick: true,
+                    onClose: () => {
+                        console.log('Custom modal closed');
+                    }
+                }
+            });
+        });
+
+        // Example usage of Modal.fromId
+        document.getElementById('fromIdBtn').addEventListener('click', () => {
+            Modal.fromId('predefinedModal', {
+                showCloseButton: true,
+                escToClose: true,
+                closeOnOutsideClick: true,
+                size: 'small',
+                onClose: () => {
+                    console.log('Predefined modal closed via onClose callback');
                 }
             });
         });
