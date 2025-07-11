@@ -30,7 +30,14 @@ Easily customizable, plug-and-play, and zero dependencies.
 npm install @lukasgoulois/modal
 ```
 
-### Using CDN (coming soon)
+### Using CDN
+
+Include the following links in your HTML file:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@lukasgoulois/modal@latest/modal.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lukasgoulois/modal@latest/modal.css">
+```
 
 ---
 
